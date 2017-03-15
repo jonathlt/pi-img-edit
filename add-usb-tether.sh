@@ -14,5 +14,14 @@ root_sector_start=$(fdisk -l $image_name.img | awk '/Linux/ {print $2}')
 echo $boot_sector_start
 echo $root_sector_start
 
+let boot_offset="boot_sector_start*512"
+let root_offset="root_sector_start*512"
+
 sudo mkdir -p mnt/image/boot
 sudo mkdir -p mnt/image/root
+
+sudo mount -v -o offset=$boot_offset -t vfat $image_name.img mnt/image/boot 
+
+ls mnt/image/boot
+
+sudo umount mnt/image/boot

@@ -6,7 +6,7 @@
 ## How?
 1. Download the script to a folder on your hard drive (only tested on Ubuntu Linux).
 2. Run the script, passing the wifi username and password:
-> ./add_wifi_creds.sh <ssid> <password>
+> ./add_wifi_creds.sh ssid password
 3. The image will be downloaded and altered to suit
 
 ## Notes
